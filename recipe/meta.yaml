@@ -26,6 +26,11 @@ requirements:
 test:
   requires:
     - pytest
+    - pytest-runner
+    - pytest-cov
+    - astropy
+    - scipy
+    - pandas
   imports:
     - hickle
 
