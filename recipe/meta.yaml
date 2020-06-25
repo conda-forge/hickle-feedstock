@@ -1,4 +1,4 @@
-{% set version = "3.4.5" %}
+{% set version = "4.0.0" %}
 
 package:
   name: hickle
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/hickle/hickle-{{ version }}.tar.gz
-  sha256: 5d54695fbc2b16e039e11c91434d1ae16ce81dcae93385e7a3659843fd9038b4
+  sha256: 983d8becd88f3792d8dad7d133a63080cd529aeaca21d1237263b9b4a1452abf
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -35,7 +35,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'A HDF5-based python pickle replacement for dumping and loading python variables to file.'
+  summary: A HDF5-based python pickle replacement for dumping and loading python variables to file.
 
   description: |
     hickle is a neat, quick way of dumping python variables to HDF5 files that can be read 
