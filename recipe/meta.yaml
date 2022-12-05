@@ -1,4 +1,4 @@
-{% set version = "3.4.5" %}
+{% set version = "v5.0.2" %}
 
 package:
   name: hickle
@@ -15,14 +15,14 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - pytest-runner
     - pytest-cov
   run:
-    - python
-    - numpy
-    - h5py
+    - python >=3.6
+    - numpy >=1.8,!=1.20
+    - h5py >=2.10.0 
 
 test:
   requires:
