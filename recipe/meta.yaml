@@ -19,8 +19,8 @@ requirements:
     - pip
   run:
     - python >=3.7
-    - numpy >=2.10.0
-    - h5py >=1.8,!=1.20
+    - numpy >=1.8,!=1.20
+    - h5py >=2.10.0
 
 test:
   requires:
