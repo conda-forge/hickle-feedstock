@@ -1,4 +1,4 @@
-{% set version = "3.4.5" %}
+{% set version = "5.0.2" %}
 
 package:
   name: hickle
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/hickle/hickle-{{ version }}.tar.gz
-  sha256: 5d54695fbc2b16e039e11c91434d1ae16ce81dcae93385e7a3659843fd9038b4
+  sha256: dbeece17f6bcf632bfccb85b93f43603ecec2a77d16eadd830a1b27045ac2c44
 
 build:
   number: 0
@@ -15,20 +15,20 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
-    - pytest-runner
-    - pytest-cov
   run:
-    - python
-    - numpy
-    - h5py
+    - python >=3.7
+    - numpy >=1.8,!=1.20
+    - h5py >=2.10.0
 
 test:
   requires:
-    - pytest
+    - pip
   imports:
     - hickle
+  commands:
+    - pip check
 
 about:
   home: http://github.com/telegraphic/hickle
@@ -48,3 +48,4 @@ about:
 extra:
   recipe-maintainers:
     - telegraphic
+    - jan-janssen
