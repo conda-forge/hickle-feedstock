@@ -1,4 +1,4 @@
-{% set version = "5.0.2" %}
+{% set version = "5.0.3" %}
 
 package:
   name: hickle
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/h/hickle/hickle-{{ version }}.tar.gz
-  sha256: dbeece17f6bcf632bfccb85b93f43603ecec2a77d16eadd830a1b27045ac2c44
+  sha256: 027e51ccad279d168123a244525e6c84bac0db64605b311b0bd349891be0c53e
 
 build:
   number: 0
