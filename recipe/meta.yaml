@@ -5,26 +5,28 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/h/hickle/hickle-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/h/hickle/hickle-{{ version }}.tar.gz
   sha256: 027e51ccad279d168123a244525e6c84bac0db64605b311b0bd349891be0c53e
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 2
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy >=1.8,!=1.20
     - h5py >=2.10.0
 
 test:
   requires:
     - pip
+    - python {{ python_min }}
   imports:
     - hickle
   commands:
