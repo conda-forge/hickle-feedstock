@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  version: "5.0.3"
+
+package:
+  name: hickle
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/h/hickle/hickle-${{ version }}.tar.gz
+  sha256: 027e51ccad279d168123a244525e6c84bac0db64605b311b0bd349891be0c53e
+
+build:
+  number: 3
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - numpy >=1.8,!=1.20
+    - h5py >=2.10.0
+
+tests:
+  - python:
+      imports:
+        - hickle
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: A HDF5-based python pickle replacement for dumping and loading python variables to file.
+  description: |
+    hickle is a neat, quick way of dumping python variables to HDF5 files that can be read
+    in most programming languages. Hickle is fast, and allows for transparent
+    compression of your data (LZF / GZIP). Hickle is built upon h5py, and can be used as a
+    drop-in replacement for pickle/cPickle.
+  homepage: http://github.com/telegraphic/hickle
+  repository: https://github.com/telegraphic/hickle
+  documentation: http://github.com/telegraphic/hickle/README.md
+
+extra:
+  recipe-maintainers:
+    - telegraphic
+    - jan-janssen
